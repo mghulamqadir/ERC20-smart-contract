@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 // Define contract 
 contract NexTouchToken is ERC20Capped, ERC20Burnable {
     address payable public owner;//this variable stores the address of the contract owner and allows them to receive Ether payments to that address.
-    uint256 public blockReward;//This variable likely stores the amount of token reward awarded for a specific action, possibly related to mining or validating blocks. 
+    uint256 public blockReward;//This variable stores the amount of token reward awarded for mining. 
 
     constructor(uint256 cap, uint256 reward) ERC20("NexTouchToken", "NTK") ERC20Capped(cap * (10**decimals())) { 
         owner = payable(msg.sender);//Store the address of whoever deployed this contract (obtained from msg.sender) in the owner variable.  Also, make sure this address can receive Ether payments by converting it to a payable address.
