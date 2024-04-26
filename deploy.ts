@@ -5,15 +5,15 @@ import { ethers } from 'ethers';
 const providerUrl = 'https://rpc.testnet.base.com/';
 
 // Contract details (modify these)
-const tokenName = 'MyToken';
-const tokenSymbol = 'MYT';
+const tokenName = 'NexTouchToken';
+const tokenSymbol = 'NTK';
 const totalSupply = '1000000000000000000'; // 100 billion tokens (modify decimals for adjustment)
 const decimals = 18;
 
 async function deployContract() {
     try {
         // Create a provider instance
-        const provider = new ethers.JsonRpcProvider(providerUrl);
+        const provider = new ethers.JsonRpcProvider(providerUrl);//
 
         // Create a wallet instance with a private key
         const privateKey = ''; // Add your private key here
@@ -47,7 +47,7 @@ async function deployContract() {
 
         console.log('Fetching ETH balance after deployment...');
         const balanceAfter = await provider.getBalance(wallet.address);
-        console.log(`Balance after: ${ethers..formatEther(balanceAfter)} ETH`);
+        console.log(`Balance after: ${ethers.formatEther(balanceAfter)} ETH`);
     } catch (error) {
         throw new Error(`Error during contract deployment: ${error}`);
     }
